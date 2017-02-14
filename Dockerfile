@@ -27,7 +27,8 @@ RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
     rm -rf /tmp/*
 
 # Install lp-solve and its Java wrapper.
-RUN apt-get install -y lp-solve liblpsolve55-dev && \
+RUN apt-get update && \
+    apt-get install -y lp-solve liblpsolve55-dev && \
     apt-get clean && \
     cd /tmp && \
     wget 'https://downloads.sourceforge.net/project/lpsolve/lpsolve/5.5.2.5/lp_solve_5.5.2.5_java.zip' -O lp_solve.zip && \

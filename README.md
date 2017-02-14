@@ -115,8 +115,26 @@ log.
 Building
 --------
 
-Instead of downloading the binary distribution archive, the archive
-can also be built from the sources in this repository.
+Instead of downloading the binary distribution archive, the archive can
+also be built from the sources in this repository. Alternative would be
+to use a Docker container.
+
+### Building with Docker
+
+Build the container by executing the following command (it will ask for
+sudo password to get root access):
+
+    make build_container
+
+Start the container:
+
+    make run_container
+
+Go to jcute directory and run it (this should automatically build
+everything):
+
+    cd jcute/
+    make run
 
 ### Compiling the Constraint Solving Library on Linux
 

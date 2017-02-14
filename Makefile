@@ -22,7 +22,7 @@ gui: liblpsolve55.so liblpsolve55j.so jcute.jar
 	sh jcutegui
 
 build_container:
-	sudo docker build -t $(DOCKER_IMAGE_NAME)
+	sudo docker build -t $(DOCKER_IMAGE_NAME) .
 
 workspace:
 	mkdir -p workspace
