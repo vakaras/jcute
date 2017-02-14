@@ -257,20 +257,12 @@ public class JCuteTextUI implements ProcessOwner{
                     "path of CUTE for Java has no space.");
             System.exit(1);
         }
-        if(!(new File(jcuteHome+fileSeparator+"liblpsolve51.so")).exists()){
-            System.err.println(jcuteHome+fileSeparator+"liblpsolve51.so is missing.");
+        if(!(new File(jcuteHome+fileSeparator+"liblpsolve55.so")).exists()){
+            System.err.println(jcuteHome+fileSeparator+"liblpsolve55.so is missing.");
             System.exit(1);
         }
-        if(!(new File(jcuteHome+fileSeparator+"liblpsolve51j.so")).exists()){
-            System.err.println(jcuteHome+fileSeparator+"liblpsolve51j.so is missing.");
-            System.exit(1);
-        }
-        if(!(new File(jcuteHome+fileSeparator+"lpsolve51.dll")).exists()){
-            System.err.println(jcuteHome+fileSeparator+"lpsolve51.dll is missing.");
-            System.exit(1);
-        }
-        if(!(new File(jcuteHome+fileSeparator+"lpsolve51j.dll")).exists()){
-            System.err.println(jcuteHome+fileSeparator+"lpsolve51j.dll is missing.");
+        if(!(new File(jcuteHome+fileSeparator+"liblpsolve55j.so")).exists()){
+            System.err.println(jcuteHome+fileSeparator+"liblpsolve55j.so is missing.");
             System.exit(1);
         }
         System.out.println("CUTE for Java home directory is = "+jcuteHome);

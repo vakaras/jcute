@@ -1,15 +1,17 @@
 rm -rf tmp
 mkdir tmp
 cd tmp
-jar -xvf ../3rdparty/polyglotclasses-1.3.2.jar
-jar -xvf ../3rdparty/sootclasses-2.2.3.jar
-jar -xvf ../3rdparty/lpsolve51j.jar
-jar -xvf ../3rdparty/jasminclasses-2.2.3.jar
-jar -xvf ../3rdparty/argparser.jar
-jar -xvf ../3rdparty/qdox-1.5.jar
-jar -xvf ../3rdparty/junit.jar
-jar -xvf ../3rdparty/emma.jar
+jar -xf ../3rdparty/polyglotclasses-1.3.2.jar
+jar -xf ../3rdparty/sootclasses-2.2.3.jar
+jar -xf /usr/lib/jvm/java-7-oracle/jre/lib/ext/lpsolve55j.jar
+jar -xf ../3rdparty/jasminclasses-2.2.3.jar
+jar -xf ../3rdparty/argparser.jar
+jar -xf ../3rdparty/qdox-1.5.jar
+jar -xf ../3rdparty/junit.jar
+jar -xf ../3rdparty/emma.jar
+echo "Extracted."
 rm -rf META-INF
-jar -cvf  ../others.jar *
+jar -cf  ../others.jar *
+echo "Added."
 cd ..
 rm -rf tmp
