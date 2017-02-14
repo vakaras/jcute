@@ -1,3 +1,6 @@
+DOCKER_IMAGE_VERSION=0.0.1
+DOCKER_IMAGE_NAME=vakaras/jcute:$(DOCKER_IMAGE_VERSION)
+
 .PHONY: run
 
 jcute.jar:
@@ -17,3 +20,17 @@ test: liblpsolve55.so liblpsolve55j.so jcute.jar
 
 gui: liblpsolve55.so liblpsolve55j.so jcute.jar
 	sh jcutegui
+
+build_container:
+	sudo docker build -t $(DOCKER_IMAGE_NAME)
+
+workspace:
+	mkdir -p workspace
+
+run_container: workspace
+	sudo docker run --rm -ti \
+		-e DISPLAY=${DISPLAY} \
+		-v /tmp/.X11-unix:/tmp/.X11-unix \
+		-v "$(CURDIR)/workspace:/home/developer" \
+		-v "$(CURDIR):/home/developer/jcute/" \
+		$(DOCKER_IMAGE_NAME) /usr/bin/fish
